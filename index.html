@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Search</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Log Search</h1>
+    <form action="/filters" method="post" id="searchForm">
+        <label for="level">Level:</label>
+        <input type="text" name="level">
+
+        <label for="message">Message:</label>
+        <input type="text" name="message">
+
+        <label for="resourceId">Resource ID:</label>
+        <input type="text" name="resourceId">
+
+        <label for="timestamp_start">Timestamp Start:</label>
+        <input type="text" name="timestamp_start" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+
+        <label for="timestamp_end">Timestamp End:</label>
+        <input type="text" name="timestamp_end" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+
+        <label for="traceId">Trace ID:</label>
+        <input type="text" name="traceId">
+
+        <label for="spanId">Span ID:</label>
+        <input type="text" name="spanId">
+
+        <label for="commit">Commit:</label>
+        <input type="text" name="commit">
+
+        <label for="parentResourceId">Parent Resource ID:</label>
+        <input type="text" name="parentResourceId">
+
+        <label for="StartDate">Start Date:</label>
+        <input type="text" name="StartDate" placeholder="YYYY-MM-DD">
+
+        <label for="EndDate">End Date:</label>
+        <input type="text" name="EndDate" placeholder="YYYY-MM-DD">
+
+        <input type="submit" value="Submit">
+    </form>
+    <div id="filteredTable"></div>
+</body>
+
+</html>
