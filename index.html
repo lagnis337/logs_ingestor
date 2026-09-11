@@ -6,58 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log Search</title>
     <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 640px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
         label {
             display: block;
             margin-bottom: 5px;
         }
 
-        input {
+        input, select {
             width: 100%;
             box-sizing: border-box;
             margin-bottom: 10px;
+            padding: 6px;
+        }
+
+        p.hint {
+            color: #555;
+            font-size: 0.9em;
         }
     </style>
 </head>
 
 <body>
     <h1>Log Search</h1>
+    <p class="hint">Leave a field blank to ignore it. All filled-in filters are combined with AND.</p>
     <form action="/filters" method="post" id="searchForm">
         <label for="level">Level:</label>
-        <input type="text" name="level">
+        <select name="level" id="level">
+            <option value="">(any)</option>
+            <option value="info">info</option>
+            <option value="warn">warn</option>
+            <option value="error">error</option>
+        </select>
 
-        <label for="message">Message:</label>
-        <input type="text" name="message">
+        <label for="message">Message contains:</label>
+        <input type="text" name="message" id="message" placeholder="case-insensitive substring search">
 
         <label for="resourceId">Resource ID:</label>
-        <input type="text" name="resourceId">
+        <input type="text" name="resourceId" id="resourceId">
 
         <label for="timestamp_start">Timestamp Start:</label>
-        <input type="text" name="timestamp_start" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+        <input type="text" name="timestamp_start" id="timestamp_start" placeholder="YYYY-MM-DDTHH:mm:ssZ">
 
         <label for="timestamp_end">Timestamp End:</label>
-        <input type="text" name="timestamp_end" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+        <input type="text" name="timestamp_end" id="timestamp_end" placeholder="YYYY-MM-DDTHH:mm:ssZ">
 
         <label for="traceId">Trace ID:</label>
-        <input type="text" name="traceId">
+        <input type="text" name="traceId" id="traceId">
 
         <label for="spanId">Span ID:</label>
-        <input type="text" name="spanId">
+        <input type="text" name="spanId" id="spanId">
 
         <label for="commit">Commit:</label>
-        <input type="text" name="commit">
+        <input type="text" name="commit" id="commit">
 
         <label for="parentResourceId">Parent Resource ID:</label>
-        <input type="text" name="parentResourceId">
+        <input type="text" name="parentResourceId" id="parentResourceId">
 
         <label for="StartDate">Start Date:</label>
-        <input type="text" name="StartDate" placeholder="YYYY-MM-DD">
+        <input type="date" name="StartDate" id="StartDate">
 
         <label for="EndDate">End Date:</label>
-        <input type="text" name="EndDate" placeholder="YYYY-MM-DD">
+        <input type="date" name="EndDate" id="EndDate">
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Search">
     </form>
-    <div id="filteredTable"></div>
 </body>
 
 </html>

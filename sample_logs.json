@@ -1,0 +1,52 @@
+[
+  {
+    "level": "error",
+    "message": "Failed to connect to DB",
+    "resourceId": "server-1234",
+    "timestamp": "2023-09-15T08:00:00Z",
+    "traceId": "abc-xyz-123",
+    "spanId": "span-456",
+    "commit": "5e5342f",
+    "metadata": { "parentResourceId": "server-0987" }
+  },
+  {
+    "level": "info",
+    "message": "User 'alice' logged in",
+    "resourceId": "server-1234",
+    "timestamp": "2023-09-15T08:05:12Z",
+    "traceId": "def-uvw-456",
+    "spanId": "span-789",
+    "commit": "5e5342f",
+    "metadata": { "parentResourceId": "server-0987" }
+  },
+  {
+    "level": "warn",
+    "message": "Disk usage at 91%",
+    "resourceId": "server-5678",
+    "timestamp": "2023-09-16T02:30:00Z",
+    "traceId": "ghi-rst-789",
+    "spanId": "span-012",
+    "commit": "a1b2c3d",
+    "metadata": { "parentResourceId": "server-0001" }
+  },
+  {
+    "level": "error",
+    "message": "Timeout while calling payment service",
+    "resourceId": "server-5678",
+    "timestamp": "2023-09-16T09:45:30Z",
+    "traceId": "jkl-opq-012",
+    "spanId": "span-345",
+    "commit": "a1b2c3d",
+    "metadata": { "parentResourceId": "server-0001" }
+  },
+  {
+    "level": "info",
+    "message": "Deployment finished successfully",
+    "resourceId": "server-9999",
+    "timestamp": "2023-09-17T12:00:00Z",
+    "traceId": "mno-lmn-345",
+    "spanId": "span-678",
+    "commit": "f0e1d2c",
+    "metadata": { "parentResourceId": "server-0987" }
+  }
+]
